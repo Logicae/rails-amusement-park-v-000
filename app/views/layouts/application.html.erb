@@ -19,7 +19,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+          
+              <%= content_tag :div, flash[:alert] if flash[:alert] %>
+              <%= content_tag :div, flash[:notice] if flash[:notice] %>
+              <%= link_to "Sign Up", new_user_path %>
+              <%= link_to "Sign In", signin_path %>
+              <%= link_to "Log Out", logout_path, method: :delete %>
+              <%= link_to "See attractions", attractions_path %>
+
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
